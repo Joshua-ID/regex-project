@@ -42,6 +42,47 @@ input {
   min-height: 60px;
 }
 
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    270deg,
+    #38b2ac,
+    #6b46c1,
+    #f6ad55,
+    #38b2ac,
+    rgb(177, 74, 74)
+  );
+  background-size: 600% 600%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: textColorShift 6s ease infinite;
+}
+
+@keyframes textColorShift {
+  0% {
+    background-position: 0% 50%;
+    /* transform: translateX(20px); */
+  }
+  30% {
+    background-position: 60% 50%;
+    /* transform: translate(25%); */
+    transform: translate(25%, -100%);
+    transition: transform 0.5s ease-in;
+  }
+  60% {
+    background-position: 100% 50%;
+    transform: translateX(-25%);
+    transition: transform 0.5s ease-in;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .flags {
   display: flex;
   justify-content: space-evenly;
@@ -61,11 +102,9 @@ input {
 
 .card-container {
   padding: 2rem;
-  border-radius: 12px;
   background: rgba(255, 128, 128, 0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   max-width: 700px;
   width: 100%;
@@ -73,4 +112,32 @@ input {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+
+  /* animation */
+
+  border: 4px solid;
+  border-image: linear-gradient(90deg, #469636, #fad0c4, #0b1322, #41053c);
+  border-image-slice: 1;
+  animation: borderMove 6s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    border-image-source: linear-gradient(
+      90deg,
+      #2a0f74,
+      #ee8bee,
+      #fbc2eb,
+      #a8f83f
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      450deg,
+      #ff9a9e,
+      #fad0c4,
+      #fbc2eb,
+      #ff9a9e
+    );
+  }
 }
