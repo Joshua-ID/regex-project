@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="styleSheet" type="text/css" href="/index.css" />
+    <title>Regex Playground</title>
+  </head>
+  <body>
+    <section class="card-container">
+      <h2>Regex Playground</h2>
+
+      <label>Text to search:</label>
+      <textarea
+        id="text"
+        rows="6"
+        placeholder="Type or paste text here..."
+      ></textarea>
+
+      <label>Regex pattern:</label>
+      <input id="regex" placeholder="Enter regex pattern like \b\w+\b" />
+
+      <div class="flags">
+        <span class="checkbox-input">
+          <input type="checkbox" id="flag-g" /> g (global)
+        </span>
+        <span class="checkbox-input">
+          <input type="checkbox" id="flag-i" /> i (ignore case)
+        </span>
+        <span class="checkbox-input">
+          <input type="checkbox" id="flag-m" /> m (multi-line)
+        </span>
+      </div>
+
+      <div class="output" id="result">Matched results will show up here...</div>
+    </section>
+  </body>
+  <script src="/index.js"></script>
+</html>
